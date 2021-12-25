@@ -12,3 +12,15 @@ html {
 .secondary-text {
     color: var(--secondary-text);
 }
+
+.header-text {
+    margin-top: -30px;
+}
+
+.code-text {
+    font-size: 3em;
+}
+
+.flex-one {
+    flex: 1;
+}

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import Icon from '../../assets/Icon.png';
 import { Button } from "@mui/material";
 import { Modal } from "react-bootstrap";
 import '../../styles/home.css';
+import { createRoom } from "./homeRequests";
 
 interface Props {
 
@@ -16,6 +18,7 @@ const Home: React.FC<Props> = () => {
     const [joinName, setJoinName] = useState<string>("");
     const [createErrorText, setCreateErrorText] = useState<string>("");
     const [joinErrorText, setJoinErrorText] = useState<string>("");
+    const navigate = useNavigate();
 
 
     const handleCreate: () => void = async () => {
@@ -29,7 +32,16 @@ const Home: React.FC<Props> = () => {
             setCreateErrorText("");
             // Make the fetch call to create room before routing to waiting page
             // For now just close modal
-            setCreateModalShow(false);
+            const { code } = await createRoom(createName);
+            if(code === 'error') {
+                alert("Something went wrong when creating a room");
+                setCreateModalShow(false);
+            } else {
+                localStorage.setItem("create-name", createName);
+                localStorage.setItem("create-code", code);
+                setCreateModalShow(false);
+                navigate("/waiting-room");
+            }
         }
     }
 
@@ -57,7 +69,7 @@ const Home: React.FC<Props> = () => {
                     width={"150px"} 
                     height={"auto"}
                 />
-                <h1 id="home-title">
+                <h1 className="header-text primary-text">
                     Paranoia
                 </h1>
             </header>

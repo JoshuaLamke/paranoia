@@ -3,11 +3,6 @@
     background-color: var(--primary-background);
 }
 
-#home-title {
-    margin-top: -30px;
-    color: var(--primary-color);
-}
-
 #home-buttons-container {
     flex: 1;
 }
