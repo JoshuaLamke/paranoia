@@ -1,0 +1,14 @@
+html {
+    --primary-color: white;
+    --primary-background: #7f5c85;
+    --secondary-background: #60855c;
+    --secondary-text: #375334;
+}
+
+.primary-text {
+    color: var(--primary-color);
+}
+
+.secondary-text {
+    color: var(--secondary-text);
+}
