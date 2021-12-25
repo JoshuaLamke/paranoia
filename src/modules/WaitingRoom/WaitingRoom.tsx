@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import '../../styles/waiting-room.css';
 import Icon from '../../assets/Icon.png';
 import { useNavigate } from 'react-router';
@@ -15,7 +15,7 @@ const WaitingRoom: React.FC<Props> = () => {
             alert("Could not find code!");
             navigate("/");
         } 
-    }, [])
+    }, [navigate])
 
     const code: string = localStorage.getItem("create-code")!;
     const name: string = localStorage.getItem("create-name")!;
