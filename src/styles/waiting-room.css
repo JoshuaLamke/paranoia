@@ -1,0 +1,4 @@
+#waiting-room-container {
+    height: 100vh;
+    background: var(--primary-background);
+}
