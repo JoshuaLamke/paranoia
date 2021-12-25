@@ -1,0 +1,46 @@
+#home-container {
+    height: 100vh;
+    background-color: var(--primary-background);
+}
+
+#home-title {
+    margin-top: -30px;
+    color: var(--primary-color);
+}
+
+#home-buttons-container {
+    flex: 1;
+}
+
+.room-button {
+    color: var(--primary-color)!important;
+    background: var(--secondary-background)!important;
+    width: 150px;
+    margin-bottom: 20px!important;
+    margin-top: 20px!important;
+}
+
+.modal-header {
+    background: var(--secondary-background);
+}
+
+.modal-title {
+    color: var(--primary-color);
+}
+
+.modal-body {
+    background: var(--primary-background);
+}
+
+.modal-input {
+    border-radius: 5px;
+    font-size: 1.5em;
+    text-align: center;
+    border: 1px solid var(--secondary-background);
+}
+
+.modal-input:focus {
+    transition: 0.3s ease-in;
+    box-shadow: 1px 1px 5px var(--secondary-background);
+    outline: none;
+}
